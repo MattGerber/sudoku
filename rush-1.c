@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush-1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: magerber <magerber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: magerber <magerber@student.wethinkcode.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 12:32:46 by magerber          #+#    #+#             */
-/*   Updated: 2020/01/20 14:23:18 by magerber         ###   ########.fr       */
+/*   Updated: 2020/02/26 16:51:38 by magerber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,27 @@ void	create_grid(int	grid[9][9], char **argv)
 	}
 }
 
+int		check_row(int grid[9][9], int num, int x){
+	int i = 0;
 
+	while(i <= 8){
+		if (grid[x][i] == num)
+			return (0);
+		i++;
+	}
+	return(1);
+}
+
+int		check_column(int grid[9][9], int num, int y){
+	int i = 0;
+
+	while(i <= 8){
+		if (grid[i][y] == num)
+			return (0);
+		i++;
+	}
+	return(1);
+}
 
 void	print_grid(int	grid[9][9])
 {
@@ -61,9 +81,9 @@ void	print_grid(int	grid[9][9])
 	}
 }
 
-void	brute(int	grid[9][9])
+void	brute(int	grid[9][9], int x, int y, int num)
 {
-
+	
 }
 
 int		main(int argc, char **argv)
